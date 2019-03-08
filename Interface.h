@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <ctime>
 using namespace std;
 
 const char MAX(10);
@@ -18,7 +19,7 @@ class RNG{
     public:
     Data1 Value[MAX];
     void dMenu();
-    int create_Rng();
+    void create_Rng();
     void great();
     void cLs();
 };

@@ -5,6 +5,7 @@ int main() {
 	
 	RNG obj;
 	char usr_choice = 'Q' || 'q';
+    obj.cLs();
 
 	//beginning of Do-While statement 
 	do {
@@ -14,9 +15,8 @@ int main() {
 		cin >> usr_choice;
 		cin.ignore(); //add in class
 	} // close do
-	while ((usr_choice == 'Y') || (usr_choice == 'y'));
-	return 0;
-}// end main
+	while ((usr_choice == 'Y') || (usr_choice == 'y')); //check condition
+	return 0;}// end main
 
 void RNG::dMenu(){char choice = 0;
 	
@@ -38,18 +38,22 @@ void RNG::dMenu(){char choice = 0;
 
 void RNG::great(){cLs(); char nPut[MAX];
             int i = 0;
-            cout << " Hello, what is your name " << endl;
+            cout << " Hello, what is your name ";
             cin.getline(Value[i].f_name, MAX);
-            cout << " Thank you " << Value[i].f_name << ", we will start create Random numbers. " << endl;
-            system("pause");
+            cout << " " << endl;
+            cout << " Thank you " << Value[i].f_name << ", we will start creating Random numbers now, " 
+                                                    "Press Enter to continue "<< endl;
+            cin.get(); 
+            //system("pause");
             i++;
             create_Rng();
-                        //cin.ignore(); //add in class
+            cin.get();            //cin.ignore(); //add in class
 }
 
-int RNG::create_Rng(){cLs(); //system ("clear");
-     cout << " Access rng function correctly " << endl;
-}
+void RNG::create_Rng(){cLs(); //system ("clear");
+    srand(time(0));
+     int rNg = (rand() % MAX) + 1;
+      cout << rNg << endl;}
 
 void RNG::cLs()
 {
