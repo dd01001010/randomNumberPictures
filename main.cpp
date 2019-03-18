@@ -1,4 +1,3 @@
-
 #include "Interface.h"
 
 int main() {
@@ -51,9 +50,18 @@ void RNG::great(){cLs(); char nPut[MAX];
 }
 
 void RNG::create_Rng(){cLs(); //system ("clear");
-    srand(time(0));
+	string linkem = " ";
+	//"https://previews.123rf.com/images/martialred/martialred1601/martialred160100213/51673234-number-1-one-fan-hand-glove-with-finger-raised-flat-vector-icon.jpg";
+    
+	srand(time(0));
      int rNg = (rand() % MAX) + 1;
-      cout << rNg << endl;}
+     
+	  cout << rNg << endl;
+	  system("gnome-terminal -x sh -c 'firefox https://previews.123rf.com/images/martialred/martialred1601/martialred160100213/51673234-number-1-one-fan-hand-glove-with-finger-raised-flat-vector-icon.jpg'");
+	  
+	  }
+
+	  //system()
 
 void RNG::cLs()
 {

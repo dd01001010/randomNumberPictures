@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <string>
 #include <ctime>
+#include <string>
 using namespace std;
 
 const char MAX(10);
@@ -17,10 +18,11 @@ class RNG{
     int node_Counter;
 
     public:
-    Data1 Value[MAX];
+    Data1 Value[MAX]; //array of structures 
     void dMenu();
     void create_Rng();
     void great();
     void cLs();
+    
 };
 #endif
