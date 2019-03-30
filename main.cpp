@@ -29,6 +29,8 @@ int main()
 	char usr_choice = 'Q' || 'q';
 	obj.cLs();
 
+	//
+
 	//beginning of Do-While Loop
 	do
 	{
@@ -67,7 +69,6 @@ void RNG::dMenu()
 void RNG::great()
 {
 	cLs();
-	char nPut[MAX];
 	int i = 0;
 	cout << " Hello, enter your name to continue...  ";
 	cin.getline(Value[i].f_name, MAX);
@@ -80,7 +81,7 @@ void RNG::great()
 
 	i++;
 	create_Rng();
-	cin.get();
+	cin.get(); //hold terminal output.. 
 }
 
 void RNG::create_Rng()
@@ -89,11 +90,26 @@ void RNG::create_Rng()
 	int rNg = (rand() % MAX) + 1;
 
 	cout << rNg << endl;
+	rngCheck(rNg);
+}
 
-	switch (rNg)
+void RNG::cLs()
+{
+	#ifdef WINDOWS
+		std::system("cls");
+	#else
+		// Assume POSIX
+		std::system("clear");
+	#endif
+}
+
+void RNG::rngCheck(int rng)
+{
+	switch (rng)
 	{ // switch statement controls user input
 	case 1:
 		system("gnome-terminal -x sh -c 'firefox https://previews.123rf.com/images/martialred/martialred1601/martialred160100213/51673234-number-1-one-fan-hand-glove-with-finger-raised-flat-vector-icon.jpg'");
+		//system(" ");
 		break;
 
 	case 2:
@@ -133,14 +149,4 @@ void RNG::create_Rng()
 		system("gnome-terminal -x sh -c 'firefox https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwAocoBM-ddlESN75Yj7Ed8Sqf1f81HfR3EhrNDDoyzeZw79kU'");
 		break;
 	}
-}
-
-void RNG::cLs()
-{
-#ifdef WINDOWS
-	std::system("cls");
-#else
-	// Assume POSIX
-	std::system("clear");
-#endif
 }
